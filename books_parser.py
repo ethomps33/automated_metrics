@@ -45,7 +45,7 @@ CATEGORIES = {
 }
 
 # Route that returns the Categorized Data
-@app.route('/process', methods=['GET'])
+@app.route('/process', methods=['POST'])
 def process_data():
     # file = request.files['books.csv']
     data = pd.read_csv('books.csv')
@@ -64,7 +64,7 @@ def aggragate_data(cat_data):
         }
         return metrics
     
-@app.route('/metrics', methods=['GET'])
+@app.route('/metrics', methods=['POST'])
 def calculate_metrics():
     # file = request.files['books.csv']
     data = pd.read_csv('books.csv')
